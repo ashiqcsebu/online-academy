@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-around;
+    background-color: #37D5D6;
+    width: 100%;
+  }
+  
+  .header div {
+    color: white;
+  }
+  
+  .header a {
+    
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .header a:hover {
+    background-color:  #D4418E;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .header {
+      flex-direction: column;
+      padding: 10px;
+   
+    }
+    .header a {
+      margin-right: 5px;
+   
+    }
+  }
+  
+
+  
