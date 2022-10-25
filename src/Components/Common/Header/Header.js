@@ -26,14 +26,14 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        {/* <Nav.Link href="/">All News</Nav.Link>
-                        <Nav.Link href="/">Breaking News</Nav.Link> */}
+                       
                        
                     </Nav>
 
                     <Nav>
-                    <Nav.Link href="/">All News</Nav.Link>
-                        <Nav.Link href="/">Breaking News</Nav.Link>
+                 
+                    <Link to='/courses'>Courses</Link>
+                        <Link to='/blog'>Blog</Link>
                         <Nav.Link href="#deets">
                             {
                                 user?.uid ?

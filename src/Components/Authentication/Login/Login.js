@@ -6,15 +6,16 @@ import Form from 'react-bootstrap/Form';
 import { FaFacebook,  FaGoogle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import app from '../../../firebase/firebase.config';
 
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 const Login = () => {
 
     const [error, setError] = useState('')
 
-     const {signIn} = useContext(AuthContext);
+     const {signIn , providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = event =>{
@@ -36,7 +37,6 @@ const Login = () => {
         } )
     }
 
-    const {providerLogin} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
 

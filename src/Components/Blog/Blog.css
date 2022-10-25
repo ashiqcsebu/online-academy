@@ -1,0 +1,37 @@
+.blog {
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+  margin-bottom: 10px;
+    padding: 20px;
+  }
+  
+  .qna {
+    border: 3px dotted #05D6D9;
+    border-radius: 10px;
+    margin: 30px 0px;
+  }
+  
+  .question {
+    margin-top: 0;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #60DFCD;
+    font-size: 1.3rem;
+  }
+  
+  .answer {
+    padding: 20px;
+    background-color: #05E8BA;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .blog {
+      flex-direction: column;
+      align-content: center; 
+     margin-left: 5%;
+     margin-right: 5%;
+  
+  
+    }
+  }
+  
