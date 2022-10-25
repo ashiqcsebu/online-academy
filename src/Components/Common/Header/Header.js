@@ -76,17 +76,40 @@
 
 
 
-import React from "react";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
+import { Button, ButtonGroup, Image, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
+
+  
+  const {providerLogin} = useContext(AuthContext);
+
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn =()=>{
+      providerLogin(googleProvider)
+      .then(result=>{
+          const user = result.user;
+          console.log(user);
+      })
+      .catch(error =>{
+          console.error(error)
+      })
+    }
+
+  const { user, logOut } = useContext(AuthContext);
   let activeStyle = {
     backgroundColor: '#01BAEF' ,
     color: "white",
     padding: '5px',
     borderRadius: '5px'
   };
+
+  
   return (
     <div className="header">
       <div>
@@ -103,7 +126,7 @@ const Header = () => {
           to="/stats"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
-          Statistics
+          Courses
         </NavLink>
         <NavLink
           to="/blog"
@@ -111,6 +134,31 @@ const Header = () => {
         >
           Blog
         </NavLink>
+
+
+        <Nav.Link eventKey={2} href="#memes">
+                            {user?.photoURL ?
+                             <Image
+                                     style={{ height: '30px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}>
+
+                                </Image>
+                                :
+                                <p> No user</p>
+                           
+                                // : <FaUser></FaUser>
+                            }
+            </Nav.Link>
+
+            <ButtonGroup vertical>
+                <Button onClick={handleGoogleSignIn} variant='outline-primary' >  Login With Google</Button>
+                <Button variant='outline-dark'> Login With Github</Button>
+            </ButtonGroup>    
+
+  
+
+
       </nav>
     </div>
   );
