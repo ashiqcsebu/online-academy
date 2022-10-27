@@ -1,3 +1,60 @@
+
+
+## Edu Hive Academney ( A online based platform to enroll diffrenet course and Skill up)
+
+Description of project:
+* Collect info about diffent field of Computer Scince and Engineering
+* Subscription Options for Paid-Per-View (PPV) Content
+* Control user's Aceess in few page to make keep privacy from unauthorised user
+* Private route redirects to the login page if the user is not logged in
+* Checkout page, you will display the name based on the id
+
+## technologies
+
+* React Bootstrap
+* React Icon and route-dom
+* React-to-pdf package
+* Firebase for user authentication
+* Vercel Server Hosting
+
+## Server Side code live link
+https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/
+https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/research
+
+
+## Client Side code live link
+
+https://edu-hive-5ffd0.web.app/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
