@@ -3,13 +3,20 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
-import { GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, } from 'firebase/auth';
 import './Login.css';
+import app from '../../../firebase/firebase.config';
+
+
+const auth = getAuth(app);
+    
 
 const Login = () => {
 
   const googleProvider = new GoogleAuthProvider()
 
+  const githubProvider = new GithubAuthProvider()
+  // const [user, setUser ]= useState({});
   const [error, setError] = useState('');
   const { signIn, setLoading, providerLogin } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -28,13 +35,33 @@ const Login = () => {
               navigate(from, {replace: true});
           }
           else{
-              toast.error('Please Log In With Google.')
+              toast.error('Please Log In')
           }
         })
         .catch(error => {
           console.error(error)
           setError(error.message);
       })
+}
+
+const handleGithubSignIn =() =>{
+  signInWithPopup(auth, githubProvider)
+  .then(result =>{
+    const user = result.user;
+    setError('');
+    // setUser(user);
+    console.log(user);
+    if(user){
+      navigate(from, {replace: true});
+  }
+  else{
+      toast.error('Please Log In .')
+  }
+  })
+  .catch(error=> {
+    console.error(error)
+    setError(error.message);
+  })
 }
 
   const handleSubmit = event => {
@@ -109,7 +136,7 @@ const Login = () => {
                           </Button>
                         </div>
                         <Button onClick={handleGoogleSignIn} className='my-2 px-5' variant='outline-success'>Log In With Google</Button>
-                        <Button className='my-2 px-5' variant='outline-success'>Log In With Github</Button>
+                        <Button  onClick={handleGithubSignIn} className='my-2 px-5' variant='outline-success'>Log In With GitHub</Button>
                         <Form.Text className="text-danger">
                             {error}
                         </Form.Text>

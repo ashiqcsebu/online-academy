@@ -11,6 +11,7 @@ import UserProfile from "../../pages/UserProfile/UserProfile/UserProfile";
 import Faq from "../../pages/FAQ/Faq";
 import Blog from "../../pages/Blog/Blog";
 import Courses from "../../pages/Courses/Courses";
+import CheckOut from "../../pages/Shared/Checkout/Checkout";
 
 export const routes = createBrowserRouter([
 
@@ -36,6 +37,13 @@ export const routes = createBrowserRouter([
                 element: <Research></Research>,
                 loader: ({params}) =>fetch(`http://localhost:5000/research/${params.id}`)
                 // loader: ({params}) =>fetch(`https://learning-platform-server-side.vercel.app/research/${params.id}`)
+            },
+
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute> <CheckOut></CheckOut> </PrivateRoute>,
+                loader: ({params}) =>fetch(`http://localhost:5000/checkout/${params.id}`)
+             
             },
             {
                 path: '/login',

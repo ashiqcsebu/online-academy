@@ -30,7 +30,7 @@ const FieldSummaryCard = () => {
                         <Link to={`/field/${field.id}`}>
                             <Image src={field.image} className="w-100 border rounded-2"   style={{ height: '150px' }}></Image>
                             <p className='my-2 fw-bold'>{field.name}</p>
-                            <p><FaEye></FaEye>{field.reads}</p>
+                            <h5>Current Student: {field.reads} </h5>
                         </Link>
                         <Button style={{backgroundColor:'#20e1c7', color: 'white'}} ><Link to={`/field/${field.id}`}>Read Now</Link></Button>
                     </div>

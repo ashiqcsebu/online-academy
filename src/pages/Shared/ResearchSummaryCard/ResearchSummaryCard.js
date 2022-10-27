@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { FaDollarSign } from 'react-icons/fa';
+
 import { Link } from 'react-router-dom';
 import './ResearchSummaryCard.css'
 
@@ -26,30 +26,23 @@ const ResearchSummaryCard = ({research}) => {
                 </div> 
             </Card.Header>
             <Card.Body>
+
                 <Card.Title className='text-success'>{title}</Card.Title>
+               
                 <Card.Text>
                     {
                         details.length > 250 ?
                             <>
-                            {details.slice(0, 250) + '...'} <Link to={`/research/${_id}`} className='see-more fw-bold'>Read More</Link> 
+                            {details.slice(0, 300) + '...'} <Link to={`/research/${_id}`} className='see-more fw-bold'>Click Here to Read More or Enroll</Link> 
                             </>
                             :
                             details
                     }
                 </Card.Text>
+
+                <p><span className='blog-text fw-semibold'>Donate cup off tea:</span> ${price}</p>
             </Card.Body>
-            <Card.Footer className="d-flex justify-content-between">
-                <div>
-                    <strong>Course Fee :  </strong>
-                    <FaDollarSign className='text-dark-violet me-2'></FaDollarSign>
-                    <strong> {price}</strong> 
-                </div>
-                <div>
-                <Button style={{backgroundColor:'#1f5156', color: 'white'}} ><Link to={`/research/${_id}`} className='see-more fw-bold'>Click Here to Enroll</Link> </Button>
-            
-                </div>
-                
-            </Card.Footer>
+          
             </Card>
         </div>
     );
