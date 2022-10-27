@@ -25,6 +25,7 @@ https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/research
 ## Client Side code live link
 
 https://edu-hive-5ffd0.web.app/
+https://edu-hive-5ffd0.firebaseapp.com/
 
 
 
