@@ -62,6 +62,7 @@ const Header = () => {
                 <>
                     {
                     user?.uid ?
+                  
                     <>  
                         <Link to='/profile' className='mx-4 fw-semibold'>
                             {user?.displayName}

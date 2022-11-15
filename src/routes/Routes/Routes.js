@@ -22,27 +22,24 @@ export const routes = createBrowserRouter([
             {
               path: '/',
               element: <Home></Home>,
-              loader: () => fetch (`http://localhost:5000/research`)
-            //   loader: () => fetch(`https://learning-platform-server-side.vercel.app/research`)
+      
+              loader: () => fetch(`https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/research`)
             },
             {
                 path: '/field/:id',
-                 element: <PrivateRoute><Field></Field></PrivateRoute>,
-            //    element: <Field></Field>,
-               loader: ({params}) => fetch (`http://localhost:5000/field/${params.id}`)
-                // loader: ({params}) => fetch(`https://learning-platform-server-side.vercel.app/field/${params.id}`)
+                 element:<PrivateRoute><Field></Field></PrivateRoute>,
+                 loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/field/${params.id}`)
             },
             {
                 path: '/research/:id',
                 element: <Research></Research>,
-                loader: ({params}) =>fetch(`http://localhost:5000/research/${params.id}`)
-                // loader: ({params}) =>fetch(`https://learning-platform-server-side.vercel.app/research/${params.id}`)
+                 loader: ({params}) =>fetch(`https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/research/${params.id}`)
             },
 
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute> <CheckOut></CheckOut> </PrivateRoute>,
-                loader: ({params}) =>fetch(`http://localhost:5000/checkout/${params.id}`)
+                loader: ({params}) =>fetch(`https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/checkout/${params.id}`)
              
             },
             {

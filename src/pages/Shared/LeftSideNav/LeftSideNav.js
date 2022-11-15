@@ -8,8 +8,8 @@ const LeftSideNav = () => {
     const [fields, setFields] = useState([]);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/research-field`)
-        // fetch(`https://learning-platform-server-side.vercel.app/research-field`)
+    
+     fetch(`https://b610-lerning-platform-server-side-ashiqcsebu.vercel.app/research-field`)
         .then (res => res.json())
         .then (data => setFields(data))
     }, [])

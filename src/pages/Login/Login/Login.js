@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,7 +17,7 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider()
 
   const githubProvider = new GithubAuthProvider()
-  // const [user, setUser ]= useState({});
+  
   const [error, setError] = useState('');
   const { signIn, setLoading, providerLogin } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             setError('');
+        
             if(user){
               navigate(from, {replace: true});
           }
@@ -49,8 +51,7 @@ const handleGithubSignIn =() =>{
   .then(result =>{
     const user = result.user;
     setError('');
-    // setUser(user);
-    console.log(user);
+    
     if(user){
       navigate(from, {replace: true});
   }
@@ -161,3 +162,14 @@ const handleGithubSignIn =() =>{
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
