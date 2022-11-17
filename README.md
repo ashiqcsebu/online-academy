@@ -1,6 +1,6 @@
 
 
-## Edu Hive Academney ( A online based platform to enroll diffrenet course and Skill up)
+## Edu Hive Academy ( A online based platform to enroll diffrenet course and Skill up)
 
 Description of project:
 * Collect info about diffent field of Computer Scince and Engineering
